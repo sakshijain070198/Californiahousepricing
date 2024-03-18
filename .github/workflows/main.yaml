@@ -15,14 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-
-### ⬇ IMPORTANT PART ⬇ ###
+      ### ⬇ IMPORTANT PART ⬇ ###
 
       # Update Node.js version for the heroku-docker-deploy action.
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '20'
 
       - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
         uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
@@ -56,10 +55,4 @@ jobs:
 
           # (Optional, default: "web")
           # Select the process type for which you want the docker container to be uploaded.
-          # By default, this argument is set to "web".
-          # For more information look at https://devcenter.heroku.com/articles/process-model
-          process_type: web
-          
-   
-          
-### ⬆ IMPORTANT PART ⬆ ###
+          # By default, this argument is
