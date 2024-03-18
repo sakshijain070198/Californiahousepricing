@@ -18,6 +18,12 @@ jobs:
 
 ### ⬇ IMPORTANT PART ⬇ ###
 
+      # Update Node.js version for the heroku-docker-deploy action.
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
       - name: Build, Push and Release a Docker container to Heroku. # Your custom step name
         uses: gonuit/heroku-docker-deploy@v1.3.3 # GitHub action name (leave it as it is).
         with:
